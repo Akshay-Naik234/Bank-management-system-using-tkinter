@@ -1,6 +1,6 @@
 from tkinter import*
 import tkinter.messagebox
-from PIL import ImageTk,Image
+
 import random
 import sqlite3
 class Bank:
@@ -98,6 +98,7 @@ class Bank:
                 k=k+1
             if k>=len(cName):
                 tkinter.messagebox.showerror("screen1","login fails")
+            
         def Log():
             global screen3
             screen3= Toplevel(screen1)
@@ -136,8 +137,10 @@ class Bank:
                 tkinter.messagebox.showinfo("screen2","Your Account Number is:"+str(acc_no))
             cName.append(name_info)
             cPin.append(pin_info)
-            cBalances.append(credit_info)
-            cAccount.append(int(acc_no))
+            cBalances.append(int(credit_info))
+            cAccount.append(str(acc_no))
+            print(cName)
+            print(cAccount)
             
         def credit():
             global txtcredit
